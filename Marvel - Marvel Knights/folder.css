@@ -9,7 +9,9 @@
     width: 204px;
 }
 
-
+.label{
+    color: white;
+}
 
 .imprintNav {
     margin-bottom: 25px
