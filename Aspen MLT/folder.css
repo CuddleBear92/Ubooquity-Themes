@@ -1,10 +1,14 @@
 #group{
-	background-color: #e21b22;
-    color: white;
-    padding-top: 0;
+	background-color: #007cd1;
+	color: white;
+	padding-top: 0;
 }
 
 #publinks{
     margin-top: -20px;
-    width: 169px;
+    width: 160px;
+}
+
+.label{
+    color: white;
 }
