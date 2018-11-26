@@ -1,0 +1,32 @@
+<link rel="stylesheet" type="text/css" href="[[FOLDER]]/folder.css">
+<script src="../../theme/jquery-3.1.1.min.js"></script>
+<script src="../../theme/theme.js"></script>
+<div id="userinfo2"></div>
+<a id="latest-comics" href="../?latest=true">NEW</a>
+<a id="browsebutton" href="../">BROWSE</a>
+<a id="mobile" href="../../theme/mobile.htm">MOBILE</a>
+<ul class="secondary-navigation"><li class="sel"><a comics/="/ubooquity/comics/">Publishers</a></li><li><a id="arcLink" comics/="/ubooquity/comics/">Story Arcs</a></li><li><a href="/ubooquity/theme/bookmarks.htm">Bookmarks</a></li></ul>
+<img id="publishers" src="[[FOLDER]]/publishers.jpg">
+<div id="publinks"><a comics/="/ubooquity/comics/../">Comics</a> > Publishers</div>
+<div id="featured">
+<div id="featuredtitle">Featured</div>
+<script>
+    setTimeout(function(){
+        addFeatured("DC Comics");
+        addFeatured("Marvel");
+        addFeatured("Image");
+        addFeatured("IDW Publishing");
+        addFeatured("Dark Horse Comics");
+        addFeatured("Top Cowviz");
+        addFeatured("Zenescope Entertainment");
+        hideStoryArcs();
+    },0);
+    var StoryArcFolder = "__Story Arcs";
+    function hideStoryArcs(){
+        $('#arcLink').attr('comics/',$( '.cellcontainer > .cell > .label:contains("'+StoryArcFolder+'")' ).parent().find('a').attr('comics/'));
+        $( '.cellcontainer > .cell > .label:contains("'+StoryArcFolder+'")' ).parent().parent().remove();
+    }
+</script>
+</div>
+<div id="allpublishers">All Publishers</div>
+<div id="poweredby">© 2016 Skin by KanadaKid. <a comics/="/ubooquity/comics/http://vaemendis.net/ubooquity">Powered by Ubooquity</a></div>
