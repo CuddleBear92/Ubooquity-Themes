@@ -1,0 +1,68 @@
+#group{
+    position: relative;
+    background-color: black;
+    color: white;
+    padding-top: 0;
+}
+
+#folderinfo{
+    height: 400px;
+}
+
+#publinks{
+    margin-top: -211px;
+    width: 152px;
+    font-size: 11px;
+    padding-left: 25px;
+
+#latest-comics{	
+	top: -43px;
+    left: 59px;
+}
+
+#browsebutton{	
+	top: -43px;
+    left: 120px;
+}
+
+#mobile{	
+	top: -43px;
+    left: 192px;
+}
+
+#group:before{
+    display: none;
+}
+
+
+#pagelabel a,#pagelabeltotal, #pagelabel{
+    color: white;
+}
+
+.label{
+    color: white;
+}
+
+#arrowup:before, #arrowup:after, #arrowup:after,body:after{
+    display: none;
+}
+
+#arrowleft, #searchleft, #arrowright, #searchright, #arrowleft10, #searchleft10, #arrowright10, #searchright10 {
+    bottom: 0px;
+}
+
+#pagelabel{
+    bottom: 0px;
+}
+
+#poweredby{
+    bottom: -58px;
+    margin-bottom: 23px;
+}
+
+
+.imprintNav {
+position: relative;
+top: -215px;
+margin-bottom: -11px;
+}

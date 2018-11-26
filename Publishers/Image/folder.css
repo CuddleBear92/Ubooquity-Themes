@@ -1,0 +1,30 @@
+#group{
+    color: black;
+    background-color: white;
+    padding-top: 0;
+    border: 0;
+}
+
+#publinks{
+    margin-top: 0;
+    width: 170px;
+    font-size: 11px;
+    padding-left: 25px;
+}
+
+#arrowup:before, #arrowup:after, #arrowup:after,body:after{
+    display: none;
+}
+
+#arrowleft, #searchleft, #arrowright, #searchright, #arrowleft10, #searchleft10, #arrowright10, #searchright10 {
+    bottom: 0px;
+}
+
+#pagelabel{
+    bottom: 0px;
+}
+
+#poweredby{
+    bottom: -58px;
+    margin-bottom: 23px;
+}
