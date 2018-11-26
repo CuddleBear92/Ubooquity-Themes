@@ -1,22 +1,18 @@
 #group{
-    background-color: #82a582;
-    background-image: url("?folderinfo=/background.jpg");
-    background-position: top center;
-    color: white;
+    color: #fde45e;
+    background-color: #677d92;
     padding-top: 0;
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 
 #publinks{
-    margin-top: -40px;
-    width: 195px;
+    margin-top: -238px;
+    width: 170px;
     font-size: 11px;
     padding-left: 25px;
 }
 
 .label{
-    color: black;
+    color: #fde45e;
 }
 
 #arrowup:before, #arrowup:after, #arrowup:after,body:after{

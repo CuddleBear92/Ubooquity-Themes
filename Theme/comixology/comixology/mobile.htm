@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="comics.css">
+        <link rel="stylesheet" type="text/css" href="mobile.css">
+        <script src="jquery-3.1.1.min.js"></script>
+        <script>
+            setTimeout(function(){
+                $( "#userinfo2" ).load( "../index.html #userinfo", function() {
+                    $( "#logoutlink" ).attr('href','../?logout=true');
+                });
+            }, 0);
+        </script>
+        <title>Ubooquity</title>
+        <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png"></link>
+        <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png"></link>
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png"></link>
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"></link>
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"></link>
+        <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png"></link>
+        <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png"></link>
+    </head>
+    <body>
+        <div id="userinfo2"></div>
+        <div id="toppagebar">
+            <div id="topbarcenter">
+                <a href="../" id="arrowup" class="topbutton"></a>
+                <a href="../comics/?latest=true" id="latest-comics" class="topbutton">NEW</a>
+                <a href="../comics/" id="browsebutton" class="topbutton">BROWSE</a>
+                <div id="mobile">MOBILE</div>
+            </div>
+        </div>
+        <img id="ad" src="mobile/ad.jpg">
+        <div id="supported">
+            <div class="supportedheader">Quick Links</div>
+            <a class="sidelink" href="http://itunes.apple.com/app/id663567628">Chunky Comic Reader (iPad)</a>
+            <a class="sidelink" href="https://play.google.com/store/apps/details?id=org.kill.geek.bdviewer">Challenger Comics Viewer (Android)</a>
+        </div>
+        <div id="publinks"><a href="../comics/">Comics</a> > Mobile Access</div>
+        
+        <div id="group">
+        <h3>Connecting Ubooquity to your mobile device</h3>
+        While this page works on mobile devices, the best way to read these comics is via a dedicated app. <br><br>
+        Below is how to read these comics on both Android and iOS devices.
+        </div><div id="group">
+        <div class="sectiontitle">Chunky Comic Reader - iPad</div>
+        This requires the Pro version, which is unlocked with a $4 in-app purchase.        
+        <br><br><img src="mobile/chunky - 1 - cloud.jpg">
+        To add the feed, tap the <b>cloud</b> button at the top. 
+        <br><br><br>
+        <b>Edit</b> then tap the <b>+</b> next to <b>Calibre / Ubooquity / OPDS </b>.  <img src="mobile/chunky - 2 - edit.jpg">
+        <br><br><br><img src="mobile/chunky - 3 - server info.jpg">
+        <br>
+        Server: <b><script language=javascript>
+        var myURL = window.location.href;
+        myURL = myURL.substring(0, myURL.length - 17);
+        document.writeln(myURL +"/opds-comics");</script></b>
+        <br>
+        Username/Password: Use your logins from here.
+        <br><br><br><br>
+        The <em>All comics</em> list is massive, I'd recommend using the <em>Folders</em> entry instead (and then tap the pin to bookmark it).        
+        <br><br><img src="mobile/chunky - 4 - download.jpg"><br>
+        You can then download comics by tapping the down arrow next to the issue, or the <b>All</b> at the bottom (to download all in the visible list). 
+        </div><div id="group">
+        <div class="sectiontitle">Challenger Comics Viewer / Chrome - Android</div> 
+        While Challenger also supports OPDS feeds, like Chunky, the support isn't quite as smooth/doesn't support larger comic databases. Instead, I suggest the following:
+        <br><br>
+        <img src="mobile/challenger - 1 - Add Folder.png">
+        <br><br>
+        In Challenger, choose the <b>Add Folder</b> option.
+        <br><br><br><br><br>
+        <img src="mobile/challenger - 2 - Location.png"><br><br>
+        Choose your <b>Internal SD card</b>. 
+        <br><br><br><br><br><br>
+        <img src="mobile/challenger - 3 - Download.png">
+        <br>
+        Click the <b>Download</b> folder and hit Select. 
+        <br><br><br>
+        Now open this page in your browser (Chrome should work best), choose whatever comic you'd like to read and tap <b>Download</b>.
+        <br><br>
+        Go back to Challenger, go to your Library and hit <b>Refresh</b>.
+        <img src="mobile/challenger - 4 - Refresh.png">
+        <br><br><br>
+        <b>Voila, comics!</b>
+        <div id="poweredby">© 2016 Skin by KanadaKid. <a href="http://vaemendis.net/ubooquity">Powered by Ubooquity</a></div>
+        </div>
+    </body>
+</html>

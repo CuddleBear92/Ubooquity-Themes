@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="comics.css">
+        <link rel="stylesheet" type="text/css" href="bookmarks.css">
+        <script type="text/javascript" src="../scripts/tools.js"></script>
+        <script src="jquery-3.1.1.min.js"></script>
+        <script src="jquery-ui.min.js"></script>
+        <script src="theme.js"></script>
+        <script>
+            setTimeout(function(){
+                $('<div>').load("../comics/ .cellcontainer:has(.label:contains('"+StoryArcFolder+"'))", function() {
+                    $('#arcLink').attr('href',$(this).find('a').attr('href'));
+                });
+                rebuildBookmarks();
+            }, 5);
+        </script>
+        <title>Ubooquity</title>
+        <link rel="apple-touch-icon" sizes="120x120" href="apple-touch-icon-120x120.png"></link>
+        <link rel="apple-touch-icon" sizes="152x152" href="apple-touch-icon-152x152.png"></link>
+        <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon-180x180.png"></link>
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"></link>
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"></link>
+        <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png"></link>
+        <link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png"></link>
+    </head>
+    <body>
+        <div id="userinfo2"></div>
+        <div id="toppagebar">
+            <div id="topbarcenter">
+                <a href="../" id="arrowup" class="topbutton"></a>
+                <a href="../comics/?latest=true" id="latest-comics" class="topbutton">NEW</a>
+                <div id="browsebutton" class="topbutton">BROWSE</div>
+                <a href="../theme/mobile.htm" id="mobile">MOBILE</a>
+            </div>
+        </div>
+        <ul class="secondary-navigation"><li><a href="../comics/">Publishers</a></li><li><a id="arcLink" href="">Story Arcs</a></li><li class="sel"><a href="">Bookmarks</a></li></ul>
+        <div id="publinks"><a href="../comics/">Comics</a> > Bookmarks</div>
+        <div id="group">
+        <div id="poweredby">© 2016 Skin by KanadaKid. <a href="http://vaemendis.net/ubooquity">Powered by Ubooquity</a></div>
+        </div>
+        <button id="export" onclick="exportBookmarks();">Export</button><button id="clear" onclick="clearBookmarks();">Clear</button>
+        <div id="dimoverlay"></div>
+        <div class="popupmenu" id="comicdetails"></div>
+    </body>
+</html>

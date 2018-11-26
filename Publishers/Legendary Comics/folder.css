@@ -1,22 +1,22 @@
 #group{
-    background-color: #82a582;
-    background-image: url("?folderinfo=/background.jpg");
-    background-position: top center;
+    background-color: #15160e;
     color: white;
     padding-top: 0;
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 
 #publinks{
-    margin-top: -40px;
-    width: 195px;
+    margin-top: -21px;
+    width: 211px;
     font-size: 11px;
     padding-left: 25px;
 }
 
+#pagelabel a,#pagelabeltotal, #pagelabel{
+    color: white;
+}
+
 .label{
-    color: black;
+    color: white;
 }
 
 #arrowup:before, #arrowup:after, #arrowup:after,body:after{

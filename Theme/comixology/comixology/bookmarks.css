@@ -1,0 +1,138 @@
+body {
+    padding: 0px;
+    background-color: white;
+    font-family: "Open Sans",Arial,sans-serif;	
+    font-size: 14px;
+    text-align: left;
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button{
+    margin-top: -10px;
+    float: right;
+}
+
+#details_close{
+    height: 0px;    
+    line-height: 12px;
+}
+
+#comicdetails div{
+    line-height: 18px;  
+    margin-bottom: 5px;
+}
+
+#comicdetails div:not(div:eq(1)){
+    margin-top: 4px;
+}
+
+#comicdetails div:before{
+    margin-bottom: 6px; 
+    line-height: 16px;
+}
+
+#group:before,#arrowup:before,#arrowup:after{
+    display: none;
+}
+
+#toppagebar{
+    margin-top: 48px;
+    margin-bottom: 10px;
+}
+
+#userinfo{
+    position:relative;
+    float: right;
+    right:2px;	
+    top: -40px;	
+    font-family: 'Open Sans',arial,sans-serif;
+    font-weight:500;
+    font-size:12px; 
+    color: #444;
+    margin-bottom: -80px;
+}
+
+#userinfo a{
+    color: #444;
+    text-decoration: underline;
+}
+
+#publinks{
+    position: relative;
+    left: -5px;
+    top: -19px;
+    margin-left: -5px;
+    padding: 12px;
+    font-size: 9pt;
+    width: 153px;
+    border: 0;
+    position: relative;
+    background-color: white;
+    color: black;
+    margin-bottom: 7px;
+}
+
+#latest-comics,#browsebutton,#mobile{		
+    top: 4px;
+} 
+
+body:after{
+    display: none;
+}
+
+#group{
+    position: relative;
+    padding-bottom: 10px;
+    margin-top: -20px;
+}
+
+#poweredby{
+    bottom: -45px;
+    left: 12px;
+    margin-bottom: 23px;
+}
+
+#remButton{
+    background: url(/theme/remove.png);
+    background-color: white;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 24px;
+    width: 22px;
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    cursor: pointer; 
+    z-index: 10;
+}
+
+.secondary-navigation{
+    position: relative;
+    top: -14px;
+}
+
+#browsebutton,#browsebutton:hover{		
+    background-repeat:no-repeat;
+    background-color: #666;
+    background-position: 30px 19px, 0px 0px;
+    background-size: 11px 5px, 76px 25px;
+    background-image:url('selector-light.png'), -webkit-linear-gradient(top, #666 0%,#444 51%);
+} 
+
+.cellcontainer{
+    align-self: flex-start;
+}
+
+.label{
+    margin-top: 4px;
+}
+
+.sortable-placeholder {
+    border: 3px dashed #aaa;
+    height: 275px;
+    width: 166px;
+    margin-bottom: 4px;
+}

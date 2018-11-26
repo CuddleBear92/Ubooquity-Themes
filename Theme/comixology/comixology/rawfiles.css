@@ -1,0 +1,145 @@
+html{
+    position: relative;
+    background-color: white;
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    background:url('/theme/banner.png');
+    background-size: 216px 45px;
+    background-color:white;
+    background-repeat:no-repeat;
+    background-position: 0px 0px; 
+}
+
+body:before{  
+    content: " ";
+    position: absolute;
+    left: 0px;
+    top: 48px;
+    height:25.5px;
+    width: 1092px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #464a49;
+    background: linear-gradient(to bottom, #464a49 0%,#494d56 3%,#4b5053 7%,#45494c 21%,#3e4245 31%,#27282c 59%,#222325 62%,#07080a 90%,#05040a 93%,#020703 97%,#0c0c0c 100%);
+    border: 4px solid #639fd1;
+    border-bottom: 4px solid #3774b3;
+}
+
+body {   
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    background-color: #efefef;
+    width: 1058px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 93px;
+    min-height: 362px;
+    padding: 10px 20px 40px 20px;
+} 
+
+body:after{
+    color: #666;
+    font-family: "Arial";
+    font-size: 10px;   
+    content:"© 2016 Skin by KanadaKid. Powered by Ubooquity";
+    position: absolute;
+    left: 13px;
+    bottom: -37px;
+    font-weight: 600;
+    margin-bottom: 23px;
+}
+
+a{
+    color: #666;
+    font-family: "Arial";
+    font-size: 12px;
+    text-align: center;
+    width: 60px;
+    height: 0px;
+    padding-top: 60px;
+    margin: 28px;
+    background:url('/theme/filebrowser/file.png');
+    background-size: 55px 55px;
+    background-repeat:no-repeat;
+    background-position: 2.5px 2.5px; 
+}
+
+a[href$="/"]{
+    background-image:url('/theme/filebrowser/folder.png');    
+}
+
+a[href$="/"]:nth-of-type(1){
+    background-image:url('/theme/filebrowser/folderopen.png');    
+}
+
+a[href$=".cbr"],a[href$=".cbz"],a[href$=".cbt"]{
+    background-image:url('/theme/filebrowser/comic.png');    
+}
+
+a[href$=".epub"]{
+    background-image:url('/theme/filebrowser/epub.png');    
+}
+
+a[href$=".pdf"]{
+    background-image:url('/theme/filebrowser/pdf.png');    
+}
+
+a[href$=".css"],a[href$=".html"]{
+    background-image:url('/theme/filebrowser/web.png');    
+}
+
+a[href$=".png"],a[href$=".jpg"],a[href$=".gif"],a[href$=".bmp"]{
+    background-image:url('/theme/filebrowser/image.png');    
+}
+
+a:nth-of-type(1):after{
+    content: " ";
+    position: absolute;
+    padding: 5px;
+    top: 52px;
+    left: 4px;
+    height:14px;
+    width: 46px;
+    border: 1px solid #000;
+    background-image:url('/theme/home.png');
+    background-position: 20px 3px; 
+    background-repeat:no-repeat;
+    background-size: 15px 15px;
+}   
+
+a:nth-of-type(1):hover:after{
+    background-color: #666;
+    background-position: 20px 3px, 0px 0px;
+    background-size: 15px 15px, 58px 25px;
+    background-image:url('/theme/home.png'), -webkit-linear-gradient(top, #666 0%,#444 51%);  
+}    
+
+a:link, a:active, a:visited{
+	color:#000000;
+    text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+#userinfo{
+    position:relative;
+    float: right;
+    right:2px;	
+    top: -40px;	
+    font-family: 'Open Sans',arial,sans-serif;
+    font-weight:500;
+    font-size:12px; 
+    color: #444;
+    margin-bottom: -80px;
+}
+
+#userinfo a{
+    color: #444;
+    text-decoration: underline;
+}
