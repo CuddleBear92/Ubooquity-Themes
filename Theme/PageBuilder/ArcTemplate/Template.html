@@ -1,0 +1,34 @@
+<link rel="stylesheet" type="text/css" href="[[FOLDER]]/folder.css">
+<script src="../../theme/jquery-3.1.1.min.js"></script>
+<script src="../../theme/theme.js"></script>
+<div id="userinfo2"></div>
+<a id="latest-comics" href="../?latest=true">NEW</a>
+<a id="browsebutton" href="../">BROWSE</a>
+<a id="mobile" href="../../theme/mobile.htm">MOBILE</a>
+<br/>
+<div id="publinks"><a href="../">Comics</a> > <a id="publisher" href="../">Story Arcs</a> > **NAME**</div>
+<br/>
+<div id="comicdesc">
+<img id="cover" src="[[FOLDER]]/folder.jpg">
+<div id="textContainer">
+    <div id="title">**NAME**</div>
+    <div id="desc">**DESCRIPTION**</div>
+</div>
+
+<script>
+var arclist;
+setTimeout(function(){ 
+    $.get("[[FOLDER]]/arclist.csv", function(response) {
+        arclist = response.split("\n");
+        buildArc(arclist);
+    }).fail(function() {
+        console.log( "no arclist.csv found" );
+    });
+}, 0);
+</script>
+<script>
+    var a = document.getElementById('publisher');
+    a.href = document.getElementById('arrowup').href;
+</script>
+</div>
+<div id="poweredby">© 2016 Skin by KanadaKid. <a href="http://vaemendis.net/ubooquity">Powered by Ubooquity</a></div>

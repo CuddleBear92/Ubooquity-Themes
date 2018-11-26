@@ -1,0 +1,133 @@
+#group{
+    position: relative;
+    padding-top: 50px;
+    margin-top: 287px;
+    background-color: white;
+}
+
+#folderinfo:before{
+    content: "Issues";
+    font-family: helvetica,arial,sans-serif;
+    font-size: 19px;
+    text-align: left;
+    position: relative;
+    top: -123px;
+    color: #666;
+    left: 42px;
+    width: 500px;
+}
+
+#folderinfo{
+    position: absolute;
+    top: 140px;
+    height: calc(100% - 95px);
+    margin-bottom: -140px;
+    margin-left: -36px;
+}
+
+#publinks{
+    font-size: 9pt;
+    margin-top: -455px;
+    width: 100%;
+    margin-bottom: -200px;
+    padding-bottom: 0;
+    padding-left: 2px;
+    padding-right: 0;
+    left: 0;
+}
+
+#latest-comics,#browsebutton,#mobile{	
+	top: -458px;
+}
+
+#group:before{
+    display: none;
+}
+
+#title{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#desc{
+    display: block;
+    font-size: 14px;
+    margin-top: 15px;
+    padding-right: 10px;
+    line-height: 20px;
+    max-height: 180px;
+    min-height: 90px;
+    overflow: hidden;
+    overflow-y: auto;
+    width: 650px;
+}
+
+#comicdesc{
+    position: relative;
+    top: 183px;
+    left: -1px;
+    padding: 10px;
+    padding-top: 0;
+    width: 1083px;
+    height: 238px;
+    display: flex;
+    justify-content: center;
+}
+
+#cover{
+    display: flex;
+    height: 180px;
+    margin: 15px;
+    margin-right: 10px;
+    border: 1px solid rgb(128,128,128);
+}
+
+#publisher2{
+    margin-left: 20px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    display-content: center;
+    width: 240px;
+    text-align: center;
+    color: #666;
+    text-decoration: underline;
+    font-size: 13px;
+    margin-right: 20px;
+}
+
+#pubImg{
+    align-self: center;
+    height: 125px;
+    width: 125px;
+    margin-bottom: 10px;
+}
+
+#textContainer{
+    display: flex;
+    padding: 15px;
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 20px;
+    border-right: 1px solid #cccbcb;
+    margin-top: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+#userinfo{
+    right:2px;	
+    top: -502px;	
+}
+
+body:after{
+    display: none;
+}
+
+#arrowleft, #searchleft, #arrowright, #searchright, #arrowleft10, #searchleft10, #arrowright10, #searchright10, #pagelabel{
+    bottom: 0px;
+}
+
+#poweredby{
+    bottom: 23px;
+}
