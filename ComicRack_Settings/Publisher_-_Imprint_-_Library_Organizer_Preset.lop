@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Profile Name="Default" Version="2.1">
+  <FolderTemplate>{&lt;publisher&gt;}{ - &lt;imprint&gt;}\{&lt;format&gt;}\{&lt;series&gt;} ({V&lt;volume0&gt;}){ CVID&lt;Custom(comicvine_volume)&gt;}</FolderTemplate>
+  <BaseFolder>L:\Comics</BaseFolder>
+  <FileTemplate>{&lt;series&gt;}{ V&lt;volume&gt;}{ - &lt;number2&gt;}{ (of &lt;count2&gt;)} [{&lt;scaninfo( )(issue)&gt;}]{ CVID&lt;Custom(comicvine_issue)&gt;}{ &lt;format&gt;}</FileTemplate>
+  <EmptyFolder />
+  <EmptyData />
+  <Postfix />
+  <Prefix />
+  <Seperator />
+  <IllegalCharacters>
+    <Item Name="&quot;" Value="'" />
+    <Item Name="/" Value="" />
+    <Item Name="*" Value="" />
+    <Item Name="&lt;" Value="[" />
+    <Item Name="?" Value="" />
+    <Item Name="&gt;" Value="]" />
+    <Item Name="|" Value="!" />
+    <Item Name=":" Value=" - " />
+    <Item Name="\" Value="" />
+  </IllegalCharacters>
+  <Months>
+    <Item Name="1" Value="January" />
+    <Item Name="2" Value="February" />
+    <Item Name="3" Value="March" />
+    <Item Name="4" Value="April" />
+    <Item Name="5" Value="May" />
+    <Item Name="6" Value="June" />
+    <Item Name="7" Value="July" />
+    <Item Name="8" Value="August" />
+    <Item Name="9" Value="September" />
+    <Item Name="10" Value="October" />
+    <Item Name="11" Value="November" />
+    <Item Name="12" Value="December" />
+    <Item Name="13" Value="Spring" />
+    <Item Name="14" Value="Summer" />
+    <Item Name="15" Value="Fall" />
+    <Item Name="16" Value="Winter" />
+  </Months>
+  <TextBox />
+  <UseFolder>true</UseFolder>
+  <UseFileName>true</UseFileName>
+  <ExcludeFolders />
+  <DontAskWhenMultiOne>true</DontAskWhenMultiOne>
+  <ExcludeOperator>All</ExcludeOperator>
+  <RemoveEmptyFolder>true</RemoveEmptyFolder>
+  <ExcludedEmptyFolder />
+  <MoveFileless>false</MoveFileless>
+  <FilelessFormat>.jpg</FilelessFormat>
+  <ExcludeMode>Do not</ExcludeMode>
+  <FailEmptyValues>false</FailEmptyValues>
+  <MoveFailed>false</MoveFailed>
+  <FailedFolder />
+  <FailedFields />
+  <Mode>Move</Mode>
+  <CopyMode>true</CopyMode>
+  <AutoSpaceFields>true</AutoSpaceFields>
+  <ReplaceMultipleSpaces>true</ReplaceMultipleSpaces>
+  <CopyReadPercentage>true</CopyReadPercentage>
+  <ExcludeRules Operator="All" ExcludeMode="Do not" />
+</Profile>
