@@ -57,7 +57,7 @@ def addComictoDB(comicid, mismatch=None, pullupd=None, imported=None, ogcname=No
     if dbcomic is None:
         newValueDict = {"ComicName":   "Comic ID: %s" % (comicid),
                 "Status":   "Loading"}
-        comlocation = os.path.dirname(imported['filelisting'][0]['comiclocation'])
+        comlocation = os.path.dirname(imported['filelisting'][0]['comiclocation']) if (imported and imported['filelisting']) else None
         oldcomversion = None
         series_status = 'Loading'
         lastissueid = None
