@@ -10,10 +10,6 @@ argument_parser.add_argument('--prefix', '-p', default='https://comicvine.gamesp
 argument_parser.add_argument('--overwrite', '-f', action='store_true')
 
 
-def has_cvid(name):
-    return bool(CVID_REGEX.search(name))
-
-
 def yield_paths(path, predicate=lambda path: path):
     for path, directories, file_names in os.walk(path):
         if predicate(path):
