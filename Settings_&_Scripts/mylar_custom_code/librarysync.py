@@ -64,7 +64,7 @@ def libraryScan(dir=None, append=False, ComicID=None, ComicName=None, cron=None,
             mylar.IMPORT_FILES +=1
             if any(files.lower().endswith('.' + x.lower()) for x in extensions):
                 comicpath = os.path.join(r, files)
-                if myDB.select('SELECT * FROM comics JOIN issues WHERE issues.Status="Downloaded" AND ComicLocation=? AND issues.Location=?', [r, files]):
+                if myDB.select('SELECT * FROM comics JOIN issues WHERE issues.Status="Downloaded" AND ComicLocation=? AND issues.Location=?', [r.decode(mylar.SYS_ENCODING), files.decode(mylar.SYS_ENCODING)]):
                     logger.info('Skipped known issue path: %r', comicpath)
                     continue
 
