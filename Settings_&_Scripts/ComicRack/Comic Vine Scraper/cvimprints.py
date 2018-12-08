@@ -46,6 +46,7 @@ __NBM = "Nbm"
 __PENGUIN = "Penguin Group"
 __RADIO = "Radio Comix"
 __SLG = "Slg Publishing"
+__TITAN = "Titan Comics"
 __TOKUMA = "Tokuma Shoten"
 __TOKYOPOP = "Tokyopop"
 __WIZARD = "Wizard"
@@ -109,6 +110,7 @@ __imprint_map = {
    "Slave Labor": __SLG,
    "Star Comics": __MARVEL,
    "Tangent Comics": __DC,
+   "Titan Books": __TITAN,
    "Todd McFarlane Productions": __IMAGE,
    "Tokuma Comics": __TOKUMA,
    "Top Cow": __IMAGE,
