@@ -10,6 +10,7 @@
     width: 172px;
     font-size: 11px;
     padding-left: 25px;
+	height: 1px;
 }
 
 #arrowup:before, #arrowup:after, #arrowup:after,body:after{
