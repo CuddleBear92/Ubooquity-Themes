@@ -87,7 +87,7 @@ def scrape_publisher_list(session: requests.Session) -> List[PublisherListing]:
         soup = make_soup(response)
         publishers.extend(scrape_publisher_list_page(soup))
 
-        next_page = soup.select_one('.next-page')
+        next_page = soup.select_one('.publisherList .next-page')
         if not next_page:
             break
         page_url = urllib.parse.urljoin(response.url, next_page['href'])
@@ -162,7 +162,7 @@ def scrape_publisher_series_list(session: requests.Session, url: str) -> List[Se
         soup = make_soup(response)
         series.extend(scrape_publisher_series_list_page(soup))
 
-        next_page = soup.select_one('.next-page')
+        next_page = soup.select_one('.seriesList .next-page')
         if not next_page:
             break
 
@@ -180,26 +180,7 @@ def scrape_series(session: requests.Session, url: str) -> Series:
 
     first_item_href = soup.select_one('.item-list .content-item a')['href']
     first_item_url = urllib.parse.urljoin(response.url, first_item_href)
-
-    try:
-        response = session.get(first_item_url)
-    except UnicodeDecodeError as error:
-        print('Applying UnicodeDecodeError workaround for URL: {!r} because of error: {!r}'.format(first_item_url, error))
-        # UnicodeDecodeError for: https://www.comixology.com/League-of-Legends-Ashe-R%C4_zboinica-Mam%C4_-Special-Edition-Romanian-1-of-4/digital-comic/741246?r=1:
-        # File "/usr/lib/python3.8/site-packages/requests/_internal_utils.py", line 25, in to_native_string
-        parts = urllib.parse.urlsplit(first_item_url)
-
-        # Replace erroneously encoded cosmetic path segment
-        path_parts = parts.path.split('/')
-        path_parts[1] = '_'
-
-        path_string = '/'.join(path_parts)
-        query_string = '?{}'.format(parts.query) if parts.query else ''
-        fragment_string = '#{}'.format(parts.fragment) if parts.fragment else ''
-
-        new_first_item_url = '{}://{}{}{}{}'.format(parts.scheme, parts.netloc, path_string, query_string, fragment_string)
-        response = session.get(new_first_item_url)
-
+    response = session.get(first_item_url)
     soup = make_soup(response)
 
     release_years = []
@@ -280,6 +261,17 @@ def make_requests_session(arguments: argparse.Namespace) -> requests.Session:
                 continue
             return response
 
+    # https://stackoverflow.com/questions/47113376/python-3-x-requests-redirect-with-unicode-character
+    original_get_redirect_target = session.get_redirect_target
+
+    def get_redirect_target(response):
+        try:
+            return original_get_redirect_target(response)
+        except UnicodeDecodeError:
+            return response.headers['Location']
+
+    session.get_redirect_target = get_redirect_target
+
     session.request = types.MethodType(request, session)
     session.request = functools.partial(session.request, timeout=arguments.timeout)
     session.headers['User-Agent'] = arguments.user_agent
@@ -288,7 +280,6 @@ def make_requests_session(arguments: argparse.Namespace) -> requests.Session:
 
 def main(arguments: argparse.Namespace):
     session = make_requests_session(arguments)
-
     print('Scraping publishers...')
     publishers = scrape_publisher_list(session)
     publishers_count = len(publishers)
