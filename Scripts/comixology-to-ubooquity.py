@@ -177,7 +177,25 @@ def scrape_series(session: requests.Session, url: str) -> Series:
     first_item_href = soup.select_one('.item-list .content-item a')['href']
     first_item_url = urllib.parse.urljoin(response.url, first_item_href)
 
-    response = session.get(first_item_url)
+    try:
+        response = session.get(first_item_url)
+    except UnicodeDecodeError as error:
+        print('Applying UnicodeDecodeError workaround for URL: {!r} because of error: {!r}'.format(first_item_url, error))
+        # UnicodeDecodeError for: https://www.comixology.com/League-of-Legends-Ashe-R%C4_zboinica-Mam%C4_-Special-Edition-Romanian-1-of-4/digital-comic/741246?r=1:
+        # File "/usr/lib/python3.8/site-packages/requests/_internal_utils.py", line 25, in to_native_string
+        parts = urllib.parse.urlsplit(first_item_url)
+
+        # Replace erroneously encoded cosmetic path segment
+        path_parts = parts.path.split('/')
+        path_parts[1] = '_'
+
+        path_string = '/'.join(path_parts)
+        query_string = '?{}'.format(parts.query) if parts.query else ''
+        fragment_string = '#{}'.format(parts.fragment) if parts.fragment else ''
+
+        new_first_item_url = '{}://{}{}{}{}'.format(parts.scheme, parts.netloc, path_string, query_string, fragment_string)
+        response = session.get(new_first_item_url)
+
     soup = make_soup(response)
 
     release_years = []
@@ -320,6 +338,10 @@ def main(arguments: argparse.Namespace):
                 metadata = get_series_metadata(series_listing, series, publisher_listing)
 
                 series_destination = os.path.join(comics_destination, get_safe_file_name('{} ({})'.format(metadata['name'], metadata['year'])))
+                if os.path.exists(series_destination):
+                    print('  - Skipping existing series: {!r}', series_destination)
+                    continue
+
                 os.makedirs(series_destination, exist_ok=True)
 
                 print('  - Downloading logo from: {!r}'.format(series_listing.logo_url))
