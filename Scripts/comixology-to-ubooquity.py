@@ -55,12 +55,14 @@ def make_soup(response) -> bs4.BeautifulSoup:
 
 def get_argument_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser()
-    parser.add_argument('--user-agent', '-ua', default=USER_AGENT)
+    parser.add_argument('--user-agent', '-u', default=USER_AGENT)
     parser.add_argument('--destination', '-d', default=os.getcwd())
     parser.add_argument('--scrape-series', '-s', action='store_true')
     parser.add_argument('--request-attempts', '-a', default=3)
     parser.add_argument('--delay-range', '-D', nargs=2, type=float, default=[1, 3])
     parser.add_argument('--timeout', '-t', type=float, default=60)
+    parser.add_argument('--skip-existing-publisher', '-sp', action='store_true')
+    parser.add_argument('--skip-existing-series', '-ss', action='store_true')
     return parser
 
 
@@ -281,6 +283,10 @@ def main(arguments: argparse.Namespace):
     for publisher_index, publisher_listing in enumerate(publishers, start=1):
         print('+ ({}/{}) Scraping publisher: {!r}...'.format(publisher_index, publishers_count, publisher_listing.title))
         comics_destination = os.path.join(arguments.destination, 'comics', get_safe_file_name(publisher_listing.title))
+        if arguments.skip_existing_publisher and os.path.exists(comics_destination):
+            print(' - Skipping existing publisher: {!r}'.format(comics_destination))
+            continue
+
         theme_destination = os.path.join(arguments.destination, 'themes')
         os.makedirs(comics_destination, exist_ok=True)
         os.makedirs(theme_destination, exist_ok=True)
@@ -338,8 +344,8 @@ def main(arguments: argparse.Namespace):
                 metadata = get_series_metadata(series_listing, series, publisher_listing)
 
                 series_destination = os.path.join(comics_destination, get_safe_file_name('{} ({})'.format(metadata['name'], metadata['year'])))
-                if os.path.exists(series_destination):
-                    print('  - Skipping existing series: {!r}', series_destination)
+                if arguments.skip_existing_series and os.path.exists(series_destination):
+                    print('  - Skipping existing series: {!r}'.format(series_destination))
                     continue
 
                 os.makedirs(series_destination, exist_ok=True)
