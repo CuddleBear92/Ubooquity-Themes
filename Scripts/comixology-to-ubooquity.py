@@ -10,7 +10,7 @@ import re
 import time
 import types
 import urllib.parse
-from typing import List, Dict
+from typing import List, Dict, Union
 
 import bs4
 import requests
@@ -48,6 +48,8 @@ Publisher = collections.namedtuple('Publisher', ['imprint_nav', 'header_url', 'b
 SeriesListing = collections.namedtuple('SeriesListing', ['title', 'url', 'logo_url'])
 Series = collections.namedtuple('Series', ['description', 'year'])
 
+Number = Union[float, int]
+
 
 def make_soup(response) -> bs4.BeautifulSoup:
     return bs4.BeautifulSoup(response.text, 'html5lib')
@@ -68,7 +70,7 @@ def get_argument_parser() -> argparse.ArgumentParser:
 
 def scrape_publisher_list_page(soup: bs4.BeautifulSoup) -> List[PublisherListing]:
     publishers = []
-    for item in soup.select('.publisher-list .content-item'):
+    for item in soup.select('.publisherList .content-item'):
         content_img_link = item.select_one('.content-img-link')
         content_img = content_img_link.select_one('.content-img')
         publisher = PublisherListing(normalize_whitespace(content_img['title']), content_img_link['href'], content_img['src'])
@@ -142,7 +144,7 @@ def ubooquityfy_imprint_navigation(soup: bs4.BeautifulSoup) -> bs4.BeautifulSoup
 
 def scrape_publisher_series_list_page(soup: bs4.BeautifulSoup) -> List[SeriesListing]:
     series = []
-    for item in soup.select('.series-list .content-item'):
+    for item in soup.select('.seriesList .content-item'):
         content_img_link = item.select_one('.content-img-link')
         content_img = content_img_link.select_one('.content-img')
         publisher = SeriesListing(content_img['title'], content_img_link['href'], content_img['src'])
@@ -241,24 +243,34 @@ def get_safe_file_name(file_name: str, replacement: str = '') -> str:
     return ''.join(character if character not in UNSAFE_CHARACTERS else replacement for character in file_name)
 
 
-def get_random_delay(lower: float, upper: float) -> float:
+def get_random_delay(lower: Number, upper: Number) -> Number:
     range_ = upper - lower
     mean = (upper + lower) / 2
     delay = random.normalvariate(mean, range_ / 4)
     return max(lower, min(upper, delay))
 
 
+def get_adjust_delay(delay: Number, last_request_time: Number) -> Number:
+    return max(0, delay - (time.time() - last_request_time))
+
+
 def make_requests_session(arguments: argparse.Namespace) -> requests.Session:
     session = requests.session()
+    session._last_request_times = collections.defaultdict(float)
+
     original_request = session.request
 
     def request(self, method, url, **kwargs):
         attempts = max(1, arguments.request_attempts)
         for attempt in range(1, attempts):
-            delay = get_random_delay(*arguments.delay_range)
+            netloc = urllib.parse.urlsplit(url).netloc
+
+            raw_delay = get_random_delay(*arguments.delay_range)
+            delay = get_adjust_delay(raw_delay, self._last_request_times[netloc])
             if delay > 0:
                 time.sleep(delay)
 
+            self._last_request_times[netloc] = time.time()
             try:
                 response = original_request(method, url, **kwargs)
             except requests.exceptions.ConnectionError:
