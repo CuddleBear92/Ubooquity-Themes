@@ -1,4 +1,4 @@
-# Ubooquity Publisher Images and HTML files
+# Ubooquity Publisher & Series Images and Metadata files
 
 This hosts an assortment of Publishers and metadata for Ubooquity use.
 
