@@ -1,0 +1,15 @@
+#group{
+    color: black;
+    padding-top: 0;
+    background-color: black;
+    border: 0;
+}
+
+#publinks{
+    margin-top: 10px;
+    width: 253px;
+}
+
+a {
+    color: white;
+}
