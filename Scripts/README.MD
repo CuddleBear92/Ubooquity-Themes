@@ -30,3 +30,8 @@ Just like MyLar and others make but rather after the fact.
 Finds archives with jpegs and other image formats that ISN'T WebP inside the archive.
 Generates a Comicbook List you can import into ComicRack.
 This is made cause there is no easy way to filter or find these files inside of ComicRack, this is for cleanup.
+
+# UCC
+Backup of the Generator
+Generates Comic Story arcs, Authors and Book Series.
+https://ubooquity.userecho.com/communities/1/topics/620-generic-comic-arcs-for-any-theme
