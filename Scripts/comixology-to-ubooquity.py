@@ -19,11 +19,9 @@ USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 PUBLISHER_LIST_URL = 'https://www.comixology.com/browse-publisher'
 FOLDER_INFO_HTML_TEMPLATE = '''
 <link rel="stylesheet" type="text/css" href="[[FOLDER]]/folder.css">
-<script src="../../theme/jquery-3.1.1.min.js"></script>
-<script src="../../theme/theme.js"></script>
-<div id="userinfo2"></div>
 {header_div_html}
 {imprint_navigation_html}
+<script>document.getElementById("group").classList.add("publisherPage");</script>
 '''
 IMPRINT_NAVIGATION_DEFAULT_URL = '/ubooquity/comics/1/'
 FOLDER_CSS_TEMPLATE = '''
