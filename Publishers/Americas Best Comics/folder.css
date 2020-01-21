@@ -1,0 +1,10 @@
+#group{
+    background-color: white;
+    color: red !important;
+    padding-top: 0;
+    border: 0;
+}
+
+.label{
+    color: red !important;
+}
