@@ -1,0 +1,20 @@
+#group{
+    background-color: black !important;
+    color: white !important;
+    padding-top: 0;
+}
+
+#publinks{
+    margin-top: -21px;
+    width: 181px;
+    font-size: 11px;
+    padding-left: 25px;
+}
+
+#pagelabel a,#pagelabeltotal, #pagelabel{
+    color: white !important;
+}
+
+.label{
+    color: white !important;
+}
