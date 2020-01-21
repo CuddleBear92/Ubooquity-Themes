@@ -1,0 +1,17 @@
+#group{
+    color: white !important;
+    padding-top: 0;
+    background-color: black !important;
+    border: 0;
+}
+
+#publinks{
+    margin-top: -2px;
+    width: 192px;
+    font-size: 11px;
+    padding-left: 25px;
+}
+
+.label{
+    color: white !important;
+}
