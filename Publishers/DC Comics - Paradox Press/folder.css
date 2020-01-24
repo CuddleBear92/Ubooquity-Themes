@@ -5,7 +5,6 @@
     border: 0;
 }
 
-#publinks{
-    margin-top: 10px;
-    width: 233px;
+.label{
+    color: black;
 }
