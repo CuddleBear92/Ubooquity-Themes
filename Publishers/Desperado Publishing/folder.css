@@ -1,0 +1,13 @@
+#group{
+	background-color: black !important;
+    color: white !important;
+    padding-top: 0;
+}
+
+#pagelabel a,#pagelabeltotal, #pagelabel{
+    color: white !important;
+}
+
+.label{
+    color: white !important;
+}
