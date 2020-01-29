@@ -1,0 +1,13 @@
+#group{
+    background-color: gray !important;
+    color: white !important;
+    padding-top: 0;
+}
+
+.label {
+    color: white !important;
+}
+
+.content-subtitle {
+    color: white !important;
+}
