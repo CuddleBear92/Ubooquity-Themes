@@ -1,0 +1,19 @@
+#group{
+    color: black !important;
+    padding-top: 0;
+    background-color: #E2DCBC !important;
+    border: 0;
+}
+
+#publinks{
+    margin-top: 10px;
+    width: 243px;
+}
+
+.label{
+    color: black !important;
+}
+
+.content-subtitle {
+    color: black !important;
+}
