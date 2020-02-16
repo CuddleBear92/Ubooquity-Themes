@@ -1,0 +1,13 @@
+#@ VERSION 1.2.3
+#Created by CR Data Manager GUI 
+#Do Not Edit Manually unless you know what you are doing
+# -------------------------------
+#@ GROUP Metadata
+# -------------------------------
+#@ NAME Adult Rating
+|<<FileName.Contains:[ADULT]>> <<Custom(comicvine_volume).Is:106668>> <<Custom(comicvine_volume).Is:101621>> <<Custom(comicvine_volume).Is:86961>> <<Custom(comicvine_volume).Is:93194>> <<Custom(comicvine_volume).Is:91898>> <<Custom(comicvine_volume).Is:108356>> <<Custom(comicvine_volume).Is:103521>> <<Custom(comicvine_volume).Is:77904>> <<Custom(comicvine_volume).Is:56407>> <<Custom(comicvine_volume).Is:116843>> <<Custom(comicvine_volume).Is:114436>> <<Custom(comicvine_volume).Is:111566>> <<Custom(comicvine_volume).Is:120648>> <<Custom(comicvine_volume).Is:122690>> <<FileName.Contains:ADULT>> => <<AgeRating.SetValue:Adults Only 18+>>
+#@ END_GROUP Metadata
+# -------------------------------
+#@ END_RULES
+# -------------------------------
+

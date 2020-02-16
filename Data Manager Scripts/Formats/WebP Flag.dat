@@ -1,0 +1,13 @@
+#@ VERSION 1.2.3
+#Created by CR Data Manager GUI 
+#Do Not Edit Manually unless you know what you are doing
+# -------------------------------
+#@ GROUP Formats
+# -------------------------------
+#@ NAME WebP
+|<<FileName.Contains:WebP>> <<FileName.Contains:webp>> <<FileDirectory.Contains:webp>> <<FileDirectory.Contains:WebP>> => <<Genre.Add:WebP>> <<Custom(WebP).SetValue:WebP>>
+#@ END_GROUP Formats
+# -------------------------------
+#@ END_RULES
+# -------------------------------
+

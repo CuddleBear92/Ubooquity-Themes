@@ -1,0 +1,27 @@
+#@ VERSION 1.2.3
+#Created by CR Data Manager GUI 
+#Do Not Edit Manually unless you know what you are doing
+# -------------------------------
+#@ GROUP Formats
+# -------------------------------
+#@ NAME TPB
+|<<FileName.Contains:TPB>> => <<Format.SetValue:TPB>>
+#@ NAME TPB
+|<<FileName.Contains:Trade Paper Back>> => <<Format.SetValue:TPB>>
+#@ NAME TPB
+|<<FileName.Contains:tpb>> => <<Format.SetValue:TPB>>
+#@ NAME TPB
+|<<FileName.Contains:trade paper back>> => <<Format.SetValue:TPB>>
+#@ NAME TPB
+|<<FileDirectory.Contains:TPB>> => <<Format.SetValue:TPB>>
+#@ NAME TPB
+|<<FileDirectory.Contains:tpb>> => <<Format.SetValue:TPB>>
+#@ NAME TPB
+|<<FileDirectory.Contains:trades>> => <<Format.SetValue:TPB>>
+#@ NAME TPB
+|<<FileDirectory.Contains:Trades>> => <<Format.SetValue:TPB>>
+#@ END_GROUP Formats
+# -------------------------------
+#@ END_RULES
+# -------------------------------
+

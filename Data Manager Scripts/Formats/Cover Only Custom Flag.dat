@@ -1,0 +1,13 @@
+#@ VERSION 1.2.3
+#Created by CR Data Manager GUI 
+#Do Not Edit Manually unless you know what you are doing
+# -------------------------------
+#@ GROUP Formats
+# -------------------------------
+#@ NAME Cover only
+|<<PageCount.Range:1.00||6.00>> <<FileName.Contains:Cover Only>> <<FileName.Contains:Variant Only>> <<FileName.Contains:variant only>> <<FileName.Contains:cover only>> => <<Custom(cover).SetValue:cover>>
+#@ END_GROUP Formats
+# -------------------------------
+#@ END_RULES
+# -------------------------------
+

@@ -1,0 +1,13 @@
+#@ VERSION 1.2.3
+#Created by CR Data Manager GUI 
+#Do Not Edit Manually unless you know what you are doing
+# -------------------------------
+#@ GROUP Imprints
+# -------------------------------
+#@ NAME Boundless Comics
+|<<Publisher.Is:Boundless Comics>> => <<Imprint.SetValue:Boundless Comics>> <<Publisher.SetValue:Avatar Press>>
+#@ END_GROUP Imprints
+# -------------------------------
+#@ END_RULES
+# -------------------------------
+

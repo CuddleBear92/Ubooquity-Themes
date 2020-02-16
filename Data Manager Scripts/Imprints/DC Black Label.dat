@@ -1,0 +1,13 @@
+#@ VERSION 1.2.3
+#Created by CR Data Manager GUI 
+#Do Not Edit Manually unless you know what you are doing
+# -------------------------------
+#@ GROUP Imprints
+# -------------------------------
+#@ NAME DC Black Label
+|<<Custom(comicvine_volume).Is:122969>> <<Custom(comicvine_volume).Is:115555>> <<Custom(comicvine_volume).Is:122475>> <<Custom(comicvine_volume).Is:120301>> <<Custom(comicvine_volume).Is:113690>> <<Custom(comicvine_volume).Is:121065>> <<Custom(comicvine_volume).Is:119367>> <<Custom(comicvine_volume).Is:122964>> <<Custom(comicvine_volume).Is:114046>> <<Custom(comicvine_volume).Is:114703>> <<Custom(comicvine_volume).Is:124096>> <<Custom(comicvine_volume).Is:123374>> <<Custom(comicvine_volume).Is:117177>> <<Custom(comicvine_volume).Is:118817>> <<Custom(comicvine_volume).Is:121548>> <<Custom(comicvine_volume).Is:124955>> <<Custom(comicvine_volume).Is:121619>> <<Custom(comicvine_volume).Is:113487>> <<Custom(comicvine_volume).Is:123099>> <<Custom(comicvine_volume).Is:122480>> <<Custom(comicvine_volume).Is:23571>> <<Custom(comicvine_volume).Is:121889>> <<Custom(comicvine_volume).Is:118477>> <<Custom(comicvine_volume).Is:114408>> <<Custom(comicvine_volume).Is:36420>> <<Custom(comicvine_volume).Is:119775>> <<Custom(comicvine_volume).Is:122958>> <<Custom(comicvine_volume).Is:122788>> <<Custom(comicvine_volume).Is:113236>> <<Custom(comicvine_volume).Is:122481>> <<Custom(comicvine_volume).Is:123665>> <<Custom(comicvine_volume).Is:122483>> <<Custom(comicvine_volume).Is:117896>> <<Custom(comicvine_volume).Is:123667>> => <<Publisher.SetValue:DC Comics>> <<Imprint.SetValue:DC Black Label>>
+#@ END_GROUP Imprints
+# -------------------------------
+#@ END_RULES
+# -------------------------------
+

@@ -1,0 +1,13 @@
+#@ VERSION 1.2.3
+#Created by CR Data Manager GUI 
+#Do Not Edit Manually unless you know what you are doing
+# -------------------------------
+#@ GROUP Formats
+# -------------------------------
+#@ NAME Add Digital Value to Custom
+|<<FileName.Contains:digital>> <<FileName.Contains:Digital>> => <<Custom(digital).SetValue:digital>>
+#@ END_GROUP Formats
+# -------------------------------
+#@ END_RULES
+# -------------------------------
+
