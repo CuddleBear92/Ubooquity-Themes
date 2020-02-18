@@ -31,6 +31,11 @@ Finds archives with jpegs and other image formats that ISN'T WebP inside the arc
 Generates a Comicbook List you can import into ComicRack.
 This is made cause there is no easy way to filter or find these files inside of ComicRack, this is for cleanup.
 
+# testarchives.pl
+Requires Perl to run. https://www.perl.org/get.html
+Just open with Perl in Windows or run with CMD or similar.
+Verifies the state of archives and writes text file with all corrupt archives. (might be able to be edited to make CBL list file for Comicrack)
+
 # UCC
 Backup of the Generator
 Generates Comic Story arcs, Authors and Book Series.
