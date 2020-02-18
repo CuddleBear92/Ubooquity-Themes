@@ -22,9 +22,6 @@ Note the script makes an extra un-needed folder for all the publisher images, th
 # Cover_Extract_0.5.py
 Extracts Files marked as cover in the ComicRack .xml metadata files inside of archives.
 
-# cvinfogen.py
-Generates cvinfo file with comicvine urls from CVID's in folder names.
-Just like MyLar and others make but rather after the fact.
 
 # find_nonwebp.py
 Finds archives with jpegs and other image formats that ISN'T WebP inside the archive.
@@ -40,3 +37,16 @@ Verifies the state of archives and writes text file with all corrupt archives. (
 Backup of the Generator
 Generates Comic Story arcs, Authors and Book Series.
 https://ubooquity.userecho.com/communities/1/topics/620-generic-comic-arcs-for-any-theme
+
+##cvinfogen.py and bat
+Generates the cvinfo file for mylar to use to match with out of the Exported CVID ComicRack can export.
+This makes matching flawless when you match correct in CR and names with the orgnaizer.
+Made to be used with Python3, just `python cvinfogen PATH-TO-COMICS`.
+you can also launch with -f to force and overwrite so it will overwrite if something was wrong or files where already in place (from mylar for example)
+
+##importer.py & librarysync.py
+importer.py & librarysync.py will use the folder name as is without touching it, this is broken on the normal mylar release.
+This allows you to have any comic structure in mylar for easy use.
+On the normal release it would make and map to a folder ruled by the rename rules, even if the renaming was turned off.
+This just allows it to match correct no matter the folder name or the folder naming format (as it doesnt create anymore).
+
