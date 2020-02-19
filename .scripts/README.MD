@@ -28,6 +28,9 @@ Finds archives with jpegs and other image formats that ISN'T WebP inside the arc
 Generates a Comicbook List you can import into ComicRack.
 This is made cause there is no easy way to filter or find these files inside of ComicRack, this is for cleanup.
 
+You use this by setting the comics_path in the python file and naming the actual folder you are scanning as the templatename.
+This will name the exporting file into that templatename as that is the folder its looking into. This makes sense so you can more easily make cbl lists for indicidual folders.
+
 # testarchives.pl
 Requires Perl to run. https://www.perl.org/get.html
 Just open with Perl in Windows or run with CMD or similar.
